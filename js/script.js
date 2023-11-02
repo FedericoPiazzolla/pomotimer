@@ -1,7 +1,18 @@
-let focusBtn = document.getElementById("focus");
-let breakBtn = document.getElementById("break");
+const focusBtn = document.getElementById("focus");
+const breakBtn = document.getElementById("break");
 
-let pauseBtn = document.getElementById("pause");
-let playBtn = document.getElementById("play");
-let restartBTn = document.getElementById("restart");
+const pauseBtn = document.getElementById("pause");
+const playBtn = document.getElementById("play");
+const restartBTn = document.getElementById("restart");
 
+const audio = new Audio(`allarm.mp3`);
+
+let focusTimer = 25; 
+let breakTimer = 5;
+let seconds = 60;
+
+/*****************************************/
+// function for decrement seconds
+let remaninTimer = () =>{
+  
+}

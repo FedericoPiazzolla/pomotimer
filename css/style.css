@@ -50,10 +50,10 @@ body {
 
 /* CARD-BODY */
 .card-body {
-  font-size: 3rem;
+  font-size: 5rem;
   color: white;
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem .2rem;
 }
 
 /* CARD-FOOTER */
