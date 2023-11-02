@@ -23,7 +23,7 @@ body {
 /* CARD */
 .card {
   background-color: var(--bg-card);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 2rem;
 }
 
@@ -41,5 +41,13 @@ body {
   border: 0;
   background-color: var(--bg-focus);
   padding: .6rem 1rem;
-  margin: 0 1rem;
+  margin: 1rem 1.5rem;
+}
+
+/* CARD-BODY */
+.card-body {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
 }
