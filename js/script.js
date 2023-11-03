@@ -7,8 +7,8 @@ const restartBtn = document.getElementById("restart");
 
 const audio = new Audio(`allarm.mp3`);
 
-let focusTimer = 10; // 25 minuti in secondi
-let breakTimer = 5; // 5 minuti in secondi
+let focusTimer = 1500; // 25 minuti in secondi
+let breakTimer = 300; // 5 minuti in secondi
 let interval = "";
 
 const elemTimer = document.getElementById("timer");
@@ -51,7 +51,7 @@ function restartTimer() {
   breakBtn.classList.remove("opacity");
   focusBtn.classList.remove("opacity");
   clearInterval(interval);
-  focusTimer = 10;
+  focusTimer = 1500;
   updateTimer();
 };
 
