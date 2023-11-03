@@ -6,13 +6,11 @@ const playBtn = document.getElementById("play");
 
 const audio = new Audio(`allarm.mp3`);
 
-let focusTimer = 0; 
-let breakTimer = 5;
-let seconds = 5;
+let focusTimer = 1500; // 25 minuti in secondi
+let breakTimer = 300; // 5 minuti in secondi
 let interval = "";
 
-const elemMinutes = document.getElementById("minutes");
-const elemSeconds = document.getElementById("seconds");
+const elemTimer = document.getElementById("timer");
 /*******************************************************************/
 
 // logica del programma 
@@ -24,11 +22,21 @@ pauseBtn.addEventListener("click", stopTimer);
 function startTimer() {
   console.log("start");
   interval = setInterval(() => {
-    console.log("ciao");
+    focusTimer--;
+    updateTimer();
   }, 1000);
 };
 
 // stop Timer Function
 function stopTimer() {
   console.log("stop");
+};
+
+// Update timer function
+function updateTimer() {
+  let minutes = Math.floor(focusTimer / 60);
+  let seconds = focusTimer % 60;
+  let formattedTimer = minutes + ":" + seconds;
+
+  elemTimer.innerHTML = formattedTimer; 
 };
