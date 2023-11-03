@@ -36,7 +36,7 @@ function stopTimer() {
 function updateTimer() {
   let minutes = Math.floor(focusTimer / 60);
   let seconds = focusTimer % 60;
-  let formattedTimer = minutes + ":" + seconds;
+  let formattedTimer = `${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
 
   elemTimer.innerHTML = formattedTimer; 
 };
