@@ -8,7 +8,7 @@ const restartBtn = document.getElementById("restart");
 const audio = new Audio(`allarm.mp3`);
 
 let focusTimer = 10; // 25 minuti in secondi
-let breakTimer = 300; // 5 minuti in secondi
+let breakTimer = 5; // 5 minuti in secondi
 let interval = "";
 
 const elemTimer = document.getElementById("timer");
@@ -22,16 +22,19 @@ restartBtn.addEventListener("click", restartTimer);
 /*******************************************************************/
 // Start Timer Function
 function startTimer() {
+  breakBtn.classList.add("opacity");
   console.log("start");
   interval = setInterval(() => {
     focusTimer--;
     updateTimer();
 
     if(focusTimer === 0) {
+      audio.play();
       clearInterval(interval);
-      focusTimer = 1500;
-      updateTimer();
-      console.log("tempo scaduto, concediti un pausa");
+      focusTimer = 300;
+      breakUpdateTimer();
+      breakBtn.classList.remove("opacity");
+      focusBtn.classList.add("opacity");
     }
 
   }, 1000);
@@ -45,8 +48,9 @@ function stopTimer() {
 
 // restart timer function
 function restartTimer() {
+  breakBtn.classList.remove("opacity")
   clearInterval(interval);
-  focusTimer = 1500;
+  focusTimer = 10;
   updateTimer();
 };
 
@@ -54,6 +58,15 @@ function restartTimer() {
 function updateTimer() {
   let minutes = Math.floor(focusTimer / 60);
   let seconds = focusTimer % 60;
+  let formattedTimer = `${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
+
+  elemTimer.innerHTML = formattedTimer; 
+};
+
+// funzione per il break
+function breakUpdateTimer() {
+  let minutes = Math.floor(breakTimer / 60);
+  let seconds = breakTimer % 60; 
   let formattedTimer = `${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
 
   elemTimer.innerHTML = formattedTimer; 
