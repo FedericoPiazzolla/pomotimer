@@ -12,14 +12,13 @@ stampare a schermo il conto alla rovescia, e aggiungere dei bottoni per lavvio, 
 - bottone di play;
 - bottone di pause;
 - bottone di restart.
-- [ ] al premere del pulsante work, stampare in html un timer di 25 minuti;
-  - [ ] SE si preme il pulsante pause: il timer si ferma
-  - [ ] ALTRIMENTI SE si preme il pulsante restart: il timer rinizia da 25 minuti
-  - [ ] ALTRIMENTI il timer parte
-- [ ] al premere del pulsante break, stampare in pagina un timer di 5 minuti;
-  - [ ] SE si preme il pulsante pause: il timer si ferma
-  - [ ] ALTRIMENTI SE si preme il pulsante restart: il timer rinizia da 5 minuti
-  - [ ] ALTRIMENTI il timer parte
+- [ ] al premere del pulsante start si avviera un timer di 25 minuti, al termine del quale suonerà una sveglia.
+- [ ] al premere del pulsante pausa: si fermerà il timer e per farlo ripartire bisogna premere sul pulsante play,
+- [ ] al premere del pulsante reset, si azzerà il timer e rinizierà da 25 minuti.
 
-- [ ] creare una funzione per il conto alla rovescia dei timer;
+- [ ] tramite una funzione determiniamo che allo start inizierà una funzione:
+  - decremente il timer di 1 ogni secondo fino ad arrivare a 00:00;
+  - una volta arrivato a 00:00 partirà il timer del break;
+- [ ] treamite una funzione: creiamo una funzione che aumenti il timer e lo aggiorni all'interno del DOM ogni secondo.
 
+- quando il timer è sulla sezione focus, l'altra sezione sarà oscurata e viceversa.

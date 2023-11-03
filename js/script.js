@@ -48,7 +48,8 @@ function stopTimer() {
 
 // restart timer function
 function restartTimer() {
-  breakBtn.classList.remove("opacity")
+  breakBtn.classList.remove("opacity");
+  focusBtn.classList.remove("opacity");
   clearInterval(interval);
   focusTimer = 10;
   updateTimer();
